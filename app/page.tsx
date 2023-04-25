@@ -432,23 +432,30 @@ const ProjectDescription = ({ description }: DescriptionProps) => {
 type TagsProps = {
   tags: string[];
   links: Link[];
+  keyId: number;
 };
-const ProjectTagsAndLinks = ({ tags, links }: TagsProps) => {
+const ProjectTagsAndLinks = ({ tags, links, keyId }: TagsProps) => {
   return (
     <div className="flex-1 md:flex-none px-2">
       <p className="text-xs sm:text-sm font-semibold">Tags</p>
       <div className="flex flex-wrap">
-        {tags.map((tag) => (
-          <span className="bg-gray-500 text-white rounded-full px-2 text-xs justify-center align-middle mb-1">
+        {tags.map((tag, ind) => (
+          <span
+            key={`${keyId}-tag-${ind}`}
+            className="bg-gray-500 text-white rounded-full px-2 text-xs justify-center align-middle mb-1"
+          >
             {tag}
           </span>
         ))}
       </div>
 
       <p className="text-xs sm:text-sm font-semibold">Links</p>
-      {links.map((link) => (
+      {links.map((link, ind) => (
         <Link href={link.url}>
-          <span className="bg-gray-800 text-white rounded-full px-2 text-xs justify-center align-middle mb-1">
+          <span
+            key={`${keyId}-link-${ind}`}
+            className="bg-gray-800 text-white rounded-full px-2 text-xs justify-center align-middle mb-1"
+          >
             {link.title}
           </span>
         </Link>
@@ -478,6 +485,7 @@ const ProjectCard = ({ project }: ProjectProps) => {
         <ProjectTagsAndLinks
           tags={project.tags}
           links={project.links}
+          keyId={project.id}
           key={`tags-${project.id}`}
         />
       </div>
