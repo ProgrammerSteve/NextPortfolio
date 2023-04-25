@@ -441,7 +441,7 @@ const ProjectTagsAndLinks = ({ tags, links, keyId }: TagsProps) => {
       <div className="flex flex-wrap">
         {tags.map((tag, ind) => (
           <span
-            key={`${keyId}-tag-${ind}`}
+            key={`tag-${keyId}-${ind}`}
             className="bg-gray-500 text-white rounded-full px-2 text-xs justify-center align-middle mb-1"
           >
             {tag}
@@ -451,11 +451,8 @@ const ProjectTagsAndLinks = ({ tags, links, keyId }: TagsProps) => {
 
       <p className="text-xs sm:text-sm font-semibold">Links</p>
       {links.map((link, ind) => (
-        <Link href={link.url}>
-          <span
-            key={`${keyId}-link-${ind}`}
-            className="bg-gray-800 text-white rounded-full px-2 text-xs justify-center align-middle mb-1"
-          >
+        <Link href={link.url} key={`link-${keyId}-${ind}`}>
+          <span className="bg-gray-800 text-white rounded-full px-2 text-xs justify-center align-middle mb-1">
             {link.title}
           </span>
         </Link>
