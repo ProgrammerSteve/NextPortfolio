@@ -39,6 +39,8 @@ type Project = {
   id: number;
   description: string;
   imageSrc: StaticImageData;
+  imageLink: string;
+  isLazy: boolean;
   tags: string[];
   links: Link[];
 };
@@ -54,6 +56,8 @@ const projects: Project[] = [
     TailwindCSS, webpack and React-router-dom to display pages. Deployed as a docker image on Fly.io
     `,
     imageSrc: ecommercePhoto,
+    imageLink: "https://misty-night-9009.fly.dev/",
+    isLazy: false,
     tags: [
       "React",
       "Next.js",
@@ -89,6 +93,8 @@ const projects: Project[] = [
     stylized components.
     `,
     imageSrc: d3Photo,
+    imageLink: "https://d3regressionplot.vercel.app/",
+    isLazy: false,
     tags: ["React", "Next.js", "d3", "Redux"],
     links: [
       {
@@ -110,6 +116,8 @@ const projects: Project[] = [
     rest API. Express router is used for versioning and organizing the code.
     `,
     imageSrc: nasaPhoto,
+    imageLink: "http://44.202.0.218:8000/",
+    isLazy: false,
     tags: [
       "React",
       "React-router",
@@ -139,6 +147,8 @@ const projects: Project[] = [
     The pg_trgm extension is used to search data. Uses React native navigation between screens.
     `,
     imageSrc: rnSearchBar,
+    imageLink: "https://github.com/ProgrammerSteve/reactNativeSearchBar",
+    isLazy: true,
     tags: ["React native", "PostgreSQL", "Supabase"],
     links: [
       {
@@ -157,6 +167,8 @@ const projects: Project[] = [
     I was able to improve the speed and functionality of the website. Code is in a private repo.
     `,
     imageSrc: nextZaya,
+    imageLink: "https://www.zayarenovations.com/",
+    isLazy: true,
     tags: ["Next.js", "Typescript", "TailwindCSS"],
     links: [
       {
@@ -174,6 +186,8 @@ const projects: Project[] = [
     The app was deployed using vercel and currently only works on the desktop.
     `,
     imageSrc: drawingPic,
+    imageLink: "https://drawingapp-beryl.vercel.app/",
+    isLazy: true,
     tags: ["Next.js", "Canvas", "Redux"],
     links: [
       {
@@ -197,11 +211,14 @@ const projects: Project[] = [
     The app can be made into mobile app for IOS and Android.
     `,
     imageSrc: ionicPic,
+    imageLink: "https://zayarenovations.web.app/",
+    isLazy: true,
     tags: [
       "Ionic",
       "Typescript",
       "React.js",
       "Flask",
+      "Python",
       "Docker",
       "Google Cloud Run",
       "Firebase",
@@ -232,6 +249,8 @@ const projects: Project[] = [
     A serverless function deployed on vercel acts as the backend.
     `,
     imageSrc: assessmentPic,
+    imageLink: "https://programmersteve.github.io/assessment-1/",
+    isLazy: true,
     tags: ["React.js", "Redux", "Redux-toolkit", "serverless function"],
     links: [
       {
@@ -254,6 +273,8 @@ const projects: Project[] = [
      chinese character list. Tailwind CSS is used to style the components
     `,
     imageSrc: mandarinPic,
+    imageLink: "https://singular-daffodil-96c4a5.netlify.app/",
+    isLazy: true,
     tags: ["React", "TailwindCSS", "MongoDB"],
     links: [
       {
@@ -282,6 +303,8 @@ const projects: Project[] = [
     Stripe is used as a payment system to carry out transactions.
     `,
     imageSrc: crwnClothingPic,
+    imageLink: "https://teal-pastelito-882485.netlify.app/",
+    isLazy: true,
     tags: [
       "Firebase",
       "React",
@@ -311,6 +334,8 @@ const projects: Project[] = [
     and the useEffect hook keeps track of any changes to the state in order to progress the game.
     `,
     imageSrc: reactGamePic,
+    imageLink: "https://programmersteve.github.io/reactsquaregame/",
+    isLazy: true,
     tags: ["React"],
     links: [
       {
@@ -334,6 +359,8 @@ const projects: Project[] = [
      using the search bar at the top. The counter button was added only to show how to test it on jest.
     `,
     imageSrc: robofriendsPic,
+    imageLink: "https://programmersteve.github.io/robofriends-test/",
+    isLazy: true,
     tags: ["Jest", "Unit Testing", "React", "Redux-Thunk", "Redux"],
     links: [
       {
@@ -351,22 +378,41 @@ const projects: Project[] = [
 type ImageProps = {
   title: string;
   imageSrc: StaticImageData;
+  imageLink: string;
+  isLazy: boolean;
 };
-const ProjectImage = ({ title, imageSrc }: ImageProps) => {
+const ProjectImage = ({ title, imageSrc, imageLink, isLazy }: ImageProps) => {
   return (
     <div className="sm:w-[300px] sm:min-w-[300px] h-full flex flex-col justify-items-center align-center">
       <h1 className="mx-auto font-bold">{title}</h1>
       <div className="relative mx-auto">
-        <Image
-          src={imageSrc}
-          alt="ecommerce-website"
-          layout="cover"
-          style={{
-            width: "100%",
-            maxWidth: "300px",
-            aspectRatio: "1.61",
-          }}
-        />
+        <Link href={imageLink}>
+          {isLazy ? (
+            <Image
+              src={imageSrc}
+              alt="ecommerce-website"
+              layout="cover"
+              loading="lazy"
+              style={{
+                width: "100%",
+                maxWidth: "300px",
+                aspectRatio: "1.61",
+              }}
+            />
+          ) : (
+            <Image
+              src={imageSrc}
+              alt="ecommerce-website"
+              layout="cover"
+              loading="eager"
+              style={{
+                width: "100%",
+                maxWidth: "300px",
+                aspectRatio: "1.61",
+              }}
+            />
+          )}
+        </Link>
       </div>
     </div>
   );
@@ -417,10 +463,23 @@ type ProjectProps = {
 const ProjectCard = ({ project }: ProjectProps) => {
   return (
     <div className=" sm:h-[300px] flex flex-col sm:flex-row">
-      <ProjectImage title={project.title} imageSrc={project.imageSrc} />
+      <ProjectImage
+        title={project.title}
+        imageSrc={project.imageSrc}
+        imageLink={project.imageLink}
+        isLazy={project.isLazy}
+        key={`image-${project.id}`}
+      />
       <div className="h-full grow flex flex-col sm:flex-row md:flex-col ">
-        <ProjectDescription description={project.description} />
-        <ProjectTagsAndLinks tags={project.tags} links={project.links} />
+        <ProjectDescription
+          description={project.description}
+          key={`description-${project.id}`}
+        />
+        <ProjectTagsAndLinks
+          tags={project.tags}
+          links={project.links}
+          key={`tags-${project.id}`}
+        />
       </div>
     </div>
   );
@@ -429,7 +488,7 @@ const ProjectCard = ({ project }: ProjectProps) => {
 const SideBar = () => {
   return (
     <>
-      <div className="text-xl font-bold">
+      <div className="text-2xl font-bold">
         <div>
           <p>Steven</p>
         </div>
@@ -441,10 +500,7 @@ const SideBar = () => {
         </div>
       </div>
 
-      <div className="text-lg">
-        <div>
-          <p>React</p>
-        </div>
+      <div className="text-xl">
         <div>
           <p>Fullstack</p>
         </div>
@@ -455,43 +511,56 @@ const SideBar = () => {
 
       <div className="flex flex-col gap-2">
         <div className="grid align-middle justify-start">
-          <div className="flex justify-center align-middle border-white border-2 border-solid px-8 py-1 gap-2  w-[150px]">
-            <div>Resume</div>
-            <div className="grid place-items-center">
-              <AiFillFile />
+          <a href={"/StevenMBautista.pdf"} target="_blank" download>
+            <div className="flex justify-center align-middle border-white border-2 border-solid px-8 py-1 gap-2  w-[150px] cursor-pointer hover:bg-gray-600">
+              <div>Resume</div>
+              <div className="grid place-items-center">
+                <AiFillFile />
+              </div>
             </div>
-          </div>
+          </a>
         </div>
         <div className="grid align-middle justify-start">
-          <div className="flex justify-center align-middle border-white border-2 border-solid px-8 py-1 gap-2  w-[150px]">
-            <div>LinkedIn</div>
-            <div className="grid place-items-center">
-              <AiOutlineLinkedin />
+          <a
+            href={"https://www.linkedin.com/in/steven-bautista-04b283159/"}
+            target="_blank"
+          >
+            <div className="flex justify-center align-middle border-white border-2 border-solid px-8 py-1 gap-2  w-[150px] cursor-pointer hover:bg-gray-600">
+              <div>LinkedIn</div>
+              <div className="grid place-items-center">
+                <AiOutlineLinkedin />
+              </div>
             </div>
-          </div>
+          </a>
         </div>
         <div className="grid align-middle justify-start">
-          <div className="flex justify-center align-middle border-white border-2 border-solid px-8 py-1 gap-2 w-[150px]">
-            <div>Github</div>
-            <div className="grid place-items-center">
-              <AiOutlineGithub />
+          <a href={"https://github.com/ProgrammerSteve"} target="_blank">
+            <div className="flex justify-center align-middle border-white border-2 border-solid px-8 py-1 gap-2 w-[150px] cursor-pointer hover:bg-gray-600">
+              <div>Github</div>
+              <div className="grid place-items-center">
+                <AiOutlineGithub />
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
       <div className="flex flex-col align-middle gap-3">
         <div className="text-sm">
           <div>Email</div>
-          <div className="text-xs">Stevenmb1995@gmail.com</div>
+          <div className="text-xs">
+            <a href="mailto:Stevenmb1995@gmail.com" className="hover:underline">
+              Stevenmb1995@gmail.com
+            </a>
+          </div>
         </div>
         <div className="text-sm">
           <div>Location</div>
-          <div>Los Fresnos, TX</div>
+          <div className="text-xs">Los Fresnos, TX</div>
         </div>
         <div className="text-sm">
           <div>Phone</div>
-          <div>{`(956)639-0218`}</div>
+          <div className="text-sm">{`(956)639-0218`}</div>
         </div>
       </div>
     </>
@@ -535,7 +604,7 @@ export default function Home() {
         <SideBar />
       </div>
       <div className=" bg-[#ded4d4f] grow h-full px-2 lg:px-16 overflow-y-scroll">
-        {projects.map((project) => (
+        {projects.map((project, ind) => (
           <ProjectCard project={project} key={project.id} />
         ))}
       </div>
