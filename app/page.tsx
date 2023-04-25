@@ -1,116 +1,502 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+import ecommercePhoto from "./ecommerceCMS.jpg";
+import d3Photo from "./d3scatter.jpg";
+import nasaPhoto from "./nasa.jpg";
+import rnSearchBar from "./searchbar.jpg";
+import nextZaya from "./ZayaNextJs.jpg";
+import drawingPic from "./drawing.jpg";
+import ionicPic from "./ion_app.jpg";
+import assessmentPic from "./assessment.jpg";
+import mandarinPic from "./hskpic.jpg";
+import crwnClothingPic from "./crwn.jpg";
+import reactGamePic from "./game.jpg";
+import robofriendsPic from "./robots.jpg";
+
+import {
+  AiFillFile,
+  AiOutlineLinkedin,
+  AiOutlineGithub,
+  AiOutlineMenu,
+  AiOutlineClose,
+} from "react-icons/ai";
+
+const inter = Inter({ subsets: ["latin"] });
+
+type Link = {
+  title: string;
+  url: string;
+};
+
+type Project = {
+  title: string;
+  id: number;
+  description: string;
+  imageSrc: StaticImageData;
+  tags: string[];
+  links: Link[];
+};
+
+const projects: Project[] = [
+  {
+    title: "Ecommerce CMS",
+    id: 0,
+    description: `
+    A React App that uses apollo-client, apollo-server, 
+    graphql, prisma, and planetscale to store and edit items on file. 
+    Backend is written with express.js and done so in typescript. Front end uses React, 
+    TailwindCSS, webpack and React-router-dom to display pages. Deployed as a docker image on Fly.io
+    `,
+    imageSrc: ecommercePhoto,
+    tags: [
+      "React",
+      "Next.js",
+      "Next-auth",
+      "Apollo-GraphQL",
+      "Prisma",
+      "Planetscale",
+      "Express.js",
+      "Node.js",
+      "Typescript",
+      "Docker",
+      "TailwindCSS",
+      "React-Router",
+      "Webpack",
+    ],
+    links: [
+      {
+        title: "website",
+        url: "https://misty-night-9009.fly.dev/",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/graphqlEcommerce",
+      },
+    ],
+  },
+  {
+    title: "d3.js regression plot",
+    id: 1,
+    description: `
+    A Next.js app that uses the d3.js library to construct a scatter plot with a linear regression line. 
+    Uses redux to share information between the graph and the points listed. Css is done partly by using 
+    stylized components.
+    `,
+    imageSrc: d3Photo,
+    tags: ["React", "Next.js", "d3", "Redux"],
+    links: [
+      {
+        title: "website",
+        url: "https://d3regressionplot.vercel.app/",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/d3regressionplot",
+      },
+    ],
+  },
+  {
+    title: "Nasa Project (Udemy)",
+    id: 2,
+    description: `
+    A React/Express.js app that is deployed in a docker container on an AWS EC2 instance. 
+    MongoDB is used to store data and the initial information was pulled/cached from the spaceX 
+    rest API. Express router is used for versioning and organizing the code.
+    `,
+    imageSrc: nasaPhoto,
+    tags: [
+      "React",
+      "React-router",
+      "MongoDB",
+      "Docker",
+      "Express.js",
+      "Node.js",
+      "AWS EC2",
+    ],
+    links: [
+      {
+        title: "website",
+        url: "http://44.202.0.218:8000/",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/nodeNasaProject",
+      },
+    ],
+  },
+  {
+    title: "Smoothies Recipes React Native App",
+    id: 3,
+    description: `
+    A React native app with a postgreSQL database on Supabase. Has a searchbar that makes 
+    throttled api calls to the database which is filtered using a database function on Supabase. 
+    The pg_trgm extension is used to search data. Uses React native navigation between screens.
+    `,
+    imageSrc: rnSearchBar,
+    tags: ["React native", "PostgreSQL", "Supabase"],
+    links: [
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/reactNativeSearchBar",
+      },
+    ],
+  },
+  {
+    title: "Nextjs Zayarenovations",
+    id: 4,
+    description: `
+    A Typescript/Next.js app made for a small home renovation business. 
+    Some of the libraries used on the site is TailwindCSS and vercel serverless functions. 
+    A domain name was bought and set up to connect with the website. Using the Lighthouse plugin, 
+    I was able to improve the speed and functionality of the website. Code is in a private repo.
+    `,
+    imageSrc: nextZaya,
+    tags: ["Next.js", "Typescript", "TailwindCSS"],
+    links: [
+      {
+        title: "website",
+        url: "https://www.zayarenovations.com/",
+      },
+    ],
+  },
+  {
+    title: "Drawing App",
+    id: 5,
+    description: `
+    A Nextjs app that utilizes the canvas element for drawing. Stylized components were used for the navigation component. 
+    Redux was used to share information from the inputs to the canvas context to allow for customization. 
+    The app was deployed using vercel and currently only works on the desktop.
+    `,
+    imageSrc: drawingPic,
+    tags: ["Next.js", "Canvas", "Redux"],
+    links: [
+      {
+        title: "website",
+        url: "https://drawingapp-beryl.vercel.app/",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/Drawingapp",
+      },
+    ],
+  },
+  {
+    title: "Ionic React App",
+    id: 6,
+    description: `
+    An Ionic application I made for my friend's small renovation business. 
+    Written in Typescript, the site has a form that uses regular expressions to validate input from users. 
+    The backend is a python flask app that sends the data as an email to the owner. 
+    The flask app was deployed as a docker container onto google cloud run. The site itself is deployed on firebase. 
+    The app can be made into mobile app for IOS and Android.
+    `,
+    imageSrc: ionicPic,
+    tags: [
+      "Ionic",
+      "Typescript",
+      "React.js",
+      "Flask",
+      "Docker",
+      "Google Cloud Run",
+      "Firebase",
+    ],
+    links: [
+      {
+        title: "website",
+        url: "https://zayarenovations.web.app/",
+      },
+      {
+        title: "github-frontend",
+        url: "https://github.com/ProgrammerSteve/RenovationSite",
+      },
+      {
+        title: "github-backend",
+        url: "https://github.com/ProgrammerSteve/RenovationSite-Backend",
+      },
+    ],
+  },
+  {
+    title: "React Assessment",
+    id: 7,
+    description: `
+    Utilizes the redux-toolkit and the createAsyncThunk function to make an API call to display a 
+    searchable list of profile cards. Tags can also be added and then searched through. 
+    The point of the asssessment was to test my frontend skills. 
+    The site was made to be responsive application that will adjust to window size. 
+    A serverless function deployed on vercel acts as the backend.
+    `,
+    imageSrc: assessmentPic,
+    tags: ["React.js", "Redux", "Redux-toolkit", "serverless function"],
+    links: [
+      {
+        title: "website",
+        url: "https://programmersteve.github.io/assessment-1/",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/assessment-1",
+      },
+    ],
+  },
+  {
+    title: "Mandarin HSK1 Training",
+    id: 8,
+    description: `
+    A react app that uses a random number to continously display flash cards for HSK level 1 
+    vocabulary. Context is used to share information between components. 
+    The backend is an express app that accesses a MongoDB server to retrieve the
+     chinese character list. Tailwind CSS is used to style the components
+    `,
+    imageSrc: mandarinPic,
+    tags: ["React", "TailwindCSS", "MongoDB"],
+    links: [
+      {
+        title: "website",
+        url: "https://singular-daffodil-96c4a5.netlify.app/",
+      },
+      {
+        title: "github-frontend",
+        url: "https://github.com/ProgrammerSteve/chinese_language_training",
+      },
+      {
+        title: "github-backend",
+        url: "https://github.com/ProgrammerSteve/charactersbackend",
+      },
+    ],
+  },
+  {
+    title: "Crwn Clothing Ecommerce App",
+    id: 9,
+    description: `
+    A react app made while following a udemy course. This site utilizes Firebase 
+    admin to handle users loging in and out of the site. 
+    Firebase firestore is used to hold the data of items listed. 
+    Stylized components are used for the styling and Redux/Redux-Saga is used 
+    to share information between components. 
+    Stripe is used as a payment system to carry out transactions.
+    `,
+    imageSrc: crwnClothingPic,
+    tags: [
+      "Firebase",
+      "React",
+      "Stripe",
+      "Redux-saga",
+      "Redux",
+      "Stylized Components",
+    ],
+    links: [
+      {
+        title: "website",
+        url: "https://teal-pastelito-882485.netlify.app/",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/crwn-clothing",
+      },
+    ],
+  },
+  {
+    title: "React Square Game",
+    id: 10,
+    description: `
+    This app has 6 levels where your goal is to get the red circle to reach the yellow square while avoiding
+     the purple square. React motion library is used to move the div element, useContext shares state 
+    between the game and score cards, useEffect/useRef is used to keep track of the time per stage, 
+    and the useEffect hook keeps track of any changes to the state in order to progress the game.
+    `,
+    imageSrc: reactGamePic,
+    tags: ["React"],
+    links: [
+      {
+        title: "website",
+        url: "https://programmersteve.github.io/reactsquaregame/",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/reactsquaregame",
+      },
+    ],
+  },
+  {
+    title: "Robofriends Testing",
+    id: 11,
+    description: `
+    An app of functional and class components made throughout the udemy course that 
+    utilizes jest for unit testing react components with enzyme. The application 
+    also makes use of redux and redux-thunk for state management and is a progressive web app. Making
+     use of an api call, the profile card information is uploaded and can be searched through 
+     using the search bar at the top. The counter button was added only to show how to test it on jest.
+    `,
+    imageSrc: robofriendsPic,
+    tags: ["Jest", "Unit Testing", "React", "Redux-Thunk", "Redux"],
+    links: [
+      {
+        title: "website",
+        url: "https://programmersteve.github.io/robofriends-test/",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/robofriends-test",
+      },
+    ],
+  },
+];
+
+type ImageProps = {
+  title: string;
+  imageSrc: StaticImageData;
+};
+const ProjectImage = ({ title, imageSrc }: ImageProps) => {
+  return (
+    <div className="sm:w-[300px] sm:min-w-[300px] h-full flex flex-col justify-items-center align-center">
+      <h1 className="mx-auto font-bold">{title}</h1>
+      <div className="relative mx-auto">
+        <Image
+          src={imageSrc}
+          alt="ecommerce-website"
+          layout="cover"
+          style={{
+            width: "100%",
+            maxWidth: "300px",
+            aspectRatio: "1.61",
+            backgroundColor: "green",
+          }}
+        />
+      </div>
+    </div>
+  );
+};
+
+type DescriptionProps = {
+  description: string;
+};
+const ProjectDescription = ({ description }: DescriptionProps) => {
+  return (
+    <div className="flex-1 md:flex-none px-2">
+      <p className="text-xs sm:text-sm">Description</p>
+      <p className="text-xs lg:text-sm">{description}</p>
+    </div>
+  );
+};
+type TagsProps = {
+  tags: string[];
+  links: Link[];
+};
+const ProjectTagsAndLinks = ({ tags, links }: TagsProps) => {
+  return (
+    <div className="flex-1 md:flex-none px-2">
+      <p className="text-xs sm:text-sm">Tags</p>
+      <div className="flex flex-wrap">
+        {tags.map((tag) => (
+          <span className="bg-gray-500 text-white rounded-full px-2 text-xs justify-center align-middle mb-2">
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      <p className="text-xs sm:text-sm">Links</p>
+      {links.map((link) => (
+        <Link href={link.url}>
+          <span className="bg-gray-800 text-white rounded-full px-2 text-xs justify-center align-middle mb-2">
+            {link.title}
+          </span>
+        </Link>
+      ))}
+    </div>
+  );
+};
+
+type ProjectProps = {
+  project: Project;
+};
+const ProjectCard = ({ project }: ProjectProps) => {
+  return (
+    <div className=" sm:h-[300px] flex flex-col sm:flex-row">
+      <ProjectImage title={project.title} imageSrc={project.imageSrc} />
+      <div className="h-full grow flex flex-col sm:flex-row md:flex-col ">
+        <ProjectDescription description={project.description} />
+        <ProjectTagsAndLinks tags={project.tags} links={project.links} />
+      </div>
+    </div>
+  );
+};
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="flex flex-col md:flex-row h-screen">
+      <div className="bg-[#211d1f] h-[100px] block md:hidden">Navbar</div>
+      <div className="bg-[#211d1f] w-[200px] min-w-[200px] h-full  hidden md:flex text-white flex-col justify-around pl-4">
+        <div className="text-xl font-bold">
+          <div>
+            <p>Steven</p>
+          </div>
+          <div>
+            <p>Matthew</p>
+          </div>
+          <div>
+            <p>Bautista</p>
+          </div>
+        </div>
+
+        <div className="text-lg">
+          <div>
+            <p>React</p>
+          </div>
+          <div>
+            <p>Fullstack</p>
+          </div>
+          <div>
+            <p>Developer</p>
+          </div>
+        </div>
+
+        <div className="grid align-middle justify-start">
+          <div className="flex justify-center align-middle border-white border-2 border-solid px-8 py-1 gap-2  w-[150px]">
+            <div>Resume</div>
+            <div className="grid place-items-center">
+              <AiFillFile />
+            </div>
+          </div>
+        </div>
+        <div className="grid align-middle justify-start">
+          <div className="flex justify-center align-middle border-white border-2 border-solid px-8 py-1 gap-2  w-[150px]">
+            <div>LinkedIn</div>
+            <div className="grid place-items-center">
+              <AiOutlineLinkedin />
+            </div>
+          </div>
+        </div>
+        <div className="grid align-middle justify-start">
+          <div className="flex justify-center align-middle border-white border-2 border-solid px-8 py-1 gap-2 w-[150px]">
+            <div>Github</div>
+            <div className="grid place-items-center">
+              <AiOutlineGithub />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col align-middle gap-3">
+          <div className="text-sm">
+            <div>Email</div>
+            <div className="text-xs">Stevenmb1995@gmail.com</div>
+          </div>
+          <div className="text-sm">
+            <div>Location</div>
+            <div>Los Fresnos, TX</div>
+          </div>
+          <div className="text-sm">
+            <div>Phone</div>
+            <div>{`(956)639-0218`}</div>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className=" bg-[#ded4d4f] grow h-full px-2 lg:px-16 overflow-y-scroll">
+        {projects.map((project) => (
+          <ProjectCard project={project} key={project.id} />
+        ))}
       </div>
     </main>
-  )
+  );
 }
