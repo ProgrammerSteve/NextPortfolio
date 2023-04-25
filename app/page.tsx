@@ -1,6 +1,10 @@
+"use client";
+
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { Inter } from "next/font/google";
+
+import { useState } from "react";
 
 import ecommercePhoto from "./ecommerceCMS.jpg";
 import d3Photo from "./d3scatter.jpg";
@@ -361,7 +365,6 @@ const ProjectImage = ({ title, imageSrc }: ImageProps) => {
             width: "100%",
             maxWidth: "300px",
             aspectRatio: "1.61",
-            backgroundColor: "green",
           }}
         />
       </div>
@@ -375,7 +378,7 @@ type DescriptionProps = {
 const ProjectDescription = ({ description }: DescriptionProps) => {
   return (
     <div className="flex-1 md:flex-none px-2">
-      <p className="text-xs sm:text-sm">Description</p>
+      <p className="text-xs sm:text-sm font-semibold">Description</p>
       <p className="text-xs lg:text-sm">{description}</p>
     </div>
   );
@@ -387,19 +390,19 @@ type TagsProps = {
 const ProjectTagsAndLinks = ({ tags, links }: TagsProps) => {
   return (
     <div className="flex-1 md:flex-none px-2">
-      <p className="text-xs sm:text-sm">Tags</p>
+      <p className="text-xs sm:text-sm font-semibold">Tags</p>
       <div className="flex flex-wrap">
         {tags.map((tag) => (
-          <span className="bg-gray-500 text-white rounded-full px-2 text-xs justify-center align-middle mb-2">
+          <span className="bg-gray-500 text-white rounded-full px-2 text-xs justify-center align-middle mb-1">
             {tag}
           </span>
         ))}
       </div>
 
-      <p className="text-xs sm:text-sm">Links</p>
+      <p className="text-xs sm:text-sm font-semibold">Links</p>
       {links.map((link) => (
         <Link href={link.url}>
-          <span className="bg-gray-800 text-white rounded-full px-2 text-xs justify-center align-middle mb-2">
+          <span className="bg-gray-800 text-white rounded-full px-2 text-xs justify-center align-middle mb-1">
             {link.title}
           </span>
         </Link>
@@ -423,35 +426,34 @@ const ProjectCard = ({ project }: ProjectProps) => {
   );
 };
 
-export default function Home() {
+const SideBar = () => {
   return (
-    <main className="flex flex-col md:flex-row h-screen">
-      <div className="bg-[#211d1f] h-[100px] block md:hidden">Navbar</div>
-      <div className="bg-[#211d1f] w-[200px] min-w-[200px] h-full  hidden md:flex text-white flex-col justify-around pl-4">
-        <div className="text-xl font-bold">
-          <div>
-            <p>Steven</p>
-          </div>
-          <div>
-            <p>Matthew</p>
-          </div>
-          <div>
-            <p>Bautista</p>
-          </div>
+    <>
+      <div className="text-xl font-bold">
+        <div>
+          <p>Steven</p>
         </div>
-
-        <div className="text-lg">
-          <div>
-            <p>React</p>
-          </div>
-          <div>
-            <p>Fullstack</p>
-          </div>
-          <div>
-            <p>Developer</p>
-          </div>
+        <div>
+          <p>Matthew</p>
         </div>
+        <div>
+          <p>Bautista</p>
+        </div>
+      </div>
 
+      <div className="text-lg">
+        <div>
+          <p>React</p>
+        </div>
+        <div>
+          <p>Fullstack</p>
+        </div>
+        <div>
+          <p>Developer</p>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-2">
         <div className="grid align-middle justify-start">
           <div className="flex justify-center align-middle border-white border-2 border-solid px-8 py-1 gap-2  w-[150px]">
             <div>Resume</div>
@@ -476,21 +478,61 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="flex flex-col align-middle gap-3">
-          <div className="text-sm">
-            <div>Email</div>
-            <div className="text-xs">Stevenmb1995@gmail.com</div>
-          </div>
-          <div className="text-sm">
-            <div>Location</div>
-            <div>Los Fresnos, TX</div>
-          </div>
-          <div className="text-sm">
-            <div>Phone</div>
-            <div>{`(956)639-0218`}</div>
-          </div>
+      <div className="flex flex-col align-middle gap-3">
+        <div className="text-sm">
+          <div>Email</div>
+          <div className="text-xs">Stevenmb1995@gmail.com</div>
         </div>
+        <div className="text-sm">
+          <div>Location</div>
+          <div>Los Fresnos, TX</div>
+        </div>
+        <div className="text-sm">
+          <div>Phone</div>
+          <div>{`(956)639-0218`}</div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default function Home() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
+  return (
+    <main className="flex flex-col md:flex-row h-screen relative">
+      {isNavOpen && (
+        <div className="fixed bg-[#2f2c2d] z-50 right-0 h-screen w-[200px] min-w-[200px] text-white flex md:hidden flex-col justify-around pl-4">
+          <div
+            className="fixed right-[20px] top-[18px] cursor-pointer"
+            onClick={toggleNav}
+          >
+            <AiOutlineClose size={30} />
+          </div>
+          <SideBar />
+        </div>
+      )}
+
+      <div className="bg-[#211d1f] h-[75px] flex md:hidden  align-middle">
+        <div className="flex-1 "></div>
+        <div className="flex-1  text-xs sm:text-base grid place-items-center text-center text-white">
+          Steven Bautista, Fullstack Developer
+        </div>
+        <div
+          className="flex-1  h-full grid justify-end items-center cursor-pointer"
+          onClick={toggleNav}
+        >
+          <AiOutlineMenu className="mr-8" fill="white" size={25} />
+        </div>
+      </div>
+
+      <div className="bg-[#211d1f] w-[200px] min-w-[200px] h-full  hidden md:flex text-white flex-col justify-around pl-4">
+        <SideBar />
       </div>
       <div className=" bg-[#ded4d4f] grow h-full px-2 lg:px-16 overflow-y-scroll">
         {projects.map((project) => (
