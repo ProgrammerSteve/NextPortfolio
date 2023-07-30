@@ -8,6 +8,7 @@ import { Inter } from "next/font/google";
 import { useState } from "react";
 
 import ecommercePhoto from "./ecommerceCMS.jpg";
+import frontendEcommercePhoto from "./ecommerceFrontend.jpg";
 import tfliteAndroid from "./TfliteAndroidApp.jpg";
 import d3Photo from "./d3scatter.jpg";
 import nasaPhoto from "./nasa.jpg";
@@ -86,6 +87,40 @@ const projects: Project[] = [
       },
     ],
   },
+  {
+    title: "Ecommerce Frontend",
+    id: 0,
+    description: `
+    A Nextjs Typescript App that uses apollo-client, apollo-server, 
+    graphql, prisma, and planetscale to display items that can be added to the user's account. 
+    Google OAuth is used with next Auth to sign in users and then creates an account on the backend.
+    TailwindCSS, webpack and React-router-dom to display pages. Deployed to vercel.
+    `,
+    imageSrc: frontendEcommercePhoto,
+    imageLink: "https://squarenext.vercel.app/",
+    isLazy: false,
+    tags: [
+      "React",
+      "Next.js",
+      "Next-auth",
+      "Google OAuth",
+      "Apollo-GraphQL",
+      "Prisma",
+      "Planetscale",
+      "Typescript",
+      "TailwindCSS",
+    ],
+    links: [
+      {
+        title: "website",
+        url: "https://squarenext.vercel.app/",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/nextEcommerce",
+      },
+    ],
+  },
 
   {
     title: "Tflite Obj.Detection",
@@ -136,7 +171,7 @@ const projects: Project[] = [
     description: `
     A React/Express.js app that is deployed in a docker container on an AWS EC2 instance. 
     MongoDB is used to store data and the initial information was pulled/cached from the spaceX 
-    rest API. Express router is used for versioning and organizing the code.
+    rest API. Express router is used for versioning and organizing the code. (EC2 currently down)
     `,
     imageSrc: nasaPhoto,
     imageLink: "http://44.202.0.218:8000/",
