@@ -21,6 +21,7 @@ import mandarinPic from "./hskpic.jpg";
 import crwnClothingPic from "./crwn.jpg";
 import reactGamePic from "./game.jpg";
 import robofriendsPic from "./robots.jpg";
+import apexAirElectric from "./apexairelectric.png";
 
 import {
   AiFillFile,
@@ -89,7 +90,7 @@ const projects: Project[] = [
   },
   {
     title: "Ecommerce Frontend",
-    id: 0,
+    id: 1,
     description: `
     A Nextjs Typescript App that uses apollo-client, apollo-server, 
     graphql, prisma, and planetscale to display items that can be added to the user's account. 
@@ -121,10 +122,28 @@ const projects: Project[] = [
       },
     ],
   },
+  {
+    title: "Apex Air Electric",
+    id: 2,
+    description: `
+    An Angular App that uses angular router, forms, tailwind and rxjs. 
+    Done as a freelance project in collaboration with a friend for a HVAC company in the local area. The website was deployed on Vercel.
 
+    `,
+    imageSrc: apexAirElectric,
+    imageLink: "https://apexairelectric.com/",
+    isLazy: false,
+    tags: ["Angular", "Typescript", "Rxjs", "TailwindCSS", "Angular-router"],
+    links: [
+      {
+        title: "website",
+        url: "https://apexairelectric.com/",
+      },
+    ],
+  },
   {
     title: "Tflite Obj.Detection",
-    id: 1,
+    id: 3,
     description: `
     An Android App that uses a tensorflow lite model made with the tensorflowlite model maker library on python. 
     Code is writen in Kotlin on Android Studio. 
@@ -141,10 +160,9 @@ const projects: Project[] = [
       },
     ],
   },
-
   {
     title: "d3.js regression plot",
-    id: 2,
+    id: 4,
     description: `
     A Next.js app that uses the d3.js library to construct a scatter plot with a linear regression line. 
     Uses redux to share information between the graph and the points listed. Css is done partly by using 
@@ -167,7 +185,7 @@ const projects: Project[] = [
   },
   {
     title: "Nasa Project (Udemy)",
-    id: 3,
+    id: 5,
     description: `
     A React/Express.js app that is deployed in a docker container on an AWS EC2 instance. 
     MongoDB is used to store data and the initial information was pulled/cached from the spaceX 
@@ -198,7 +216,7 @@ const projects: Project[] = [
   },
   {
     title: "Smoothies Recipes React Native App",
-    id: 4,
+    id: 6,
     description: `
     A React native app with a postgreSQL database on Supabase. Has a searchbar that makes 
     throttled api calls to the database which is filtered using a database function on Supabase. 
@@ -217,7 +235,7 @@ const projects: Project[] = [
   },
   {
     title: "Nextjs Zayarenovations",
-    id: 5,
+    id: 7,
     description: `
     A Typescript/Next.js app made for a small home renovation business. 
     Some of the libraries used on the site is TailwindCSS and vercel serverless functions. 
@@ -237,7 +255,7 @@ const projects: Project[] = [
   },
   {
     title: "Drawing App",
-    id: 6,
+    id: 8,
     description: `
     A Nextjs app that utilizes the canvas element for drawing. Stylized components were used for the navigation component. 
     Redux was used to share information from the inputs to the canvas context to allow for customization. 
@@ -260,7 +278,7 @@ const projects: Project[] = [
   },
   {
     title: "Ionic React App",
-    id: 7,
+    id: 9,
     description: `
     An Ionic application I made for my friend's small renovation business. 
     Written in Typescript, the site has a form that uses regular expressions to validate input from users. 
@@ -298,7 +316,7 @@ const projects: Project[] = [
   },
   {
     title: "React Assessment",
-    id: 8,
+    id: 10,
     description: `
     Utilizes the redux-toolkit and the createAsyncThunk function to make an API call to display a 
     searchable list of profile cards. Tags can also be added and then searched through. 
@@ -323,7 +341,7 @@ const projects: Project[] = [
   },
   {
     title: "Mandarin HSK1 Training",
-    id: 9,
+    id: 11,
     description: `
     A react app that uses a random number to continously display flash cards for HSK level 1 
     vocabulary. Context is used to share information between components. 
@@ -351,7 +369,7 @@ const projects: Project[] = [
   },
   {
     title: "Crwn Clothing Ecommerce App",
-    id: 10,
+    id: 12,
     description: `
     A react app made while following a udemy course. This site utilizes Firebase 
     admin to handle users loging in and out of the site. 
@@ -384,7 +402,7 @@ const projects: Project[] = [
   },
   {
     title: "React Square Game",
-    id: 11,
+    id: 13,
     description: `
     This app has 6 levels where your goal is to get the red circle to reach the yellow square while avoiding
      the purple square. React motion library is used to move the div element, useContext shares state 
@@ -408,7 +426,7 @@ const projects: Project[] = [
   },
   {
     title: "Robofriends Testing",
-    id: 12,
+    id: 14,
     description: `
     An app of functional and class components made throughout the udemy course that 
     utilizes jest for unit testing react components with enzyme. The application 
