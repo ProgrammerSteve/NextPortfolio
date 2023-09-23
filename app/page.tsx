@@ -22,6 +22,7 @@ import crwnClothingPic from "./crwn.jpg";
 import reactGamePic from "./game.jpg";
 import robofriendsPic from "./robots.jpg";
 import apexAirElectric from "./apexairelectric.png";
+import angularClips from "./angularClips.jpg";
 
 import {
   AiFillFile,
@@ -138,6 +139,38 @@ const projects: Project[] = [
       {
         title: "website",
         url: "https://apexairelectric.com/",
+      },
+    ],
+  },
+
+  {
+    title: "Angular Clips",
+    id: 20,
+    description: `
+    An Angular App for uploading and sharing videos that was made throughout a udemy course. The app uses angular router, forms, video-js, Ffmpeg, tailwind and rxjs. 
+    Files and authentication is implemented through using firebase.
+
+    `,
+    imageSrc: angularClips,
+    imageLink: "https://clips-angular-project-puce.vercel.app/",
+    isLazy: false,
+    tags: [
+      "Angular",
+      "Typescript",
+      "firebase",
+      "video-js",
+      "Rxjs",
+      "TailwindCSS",
+      "Angular-router",
+    ],
+    links: [
+      {
+        title: "website",
+        url: "https://clips-angular-project-puce.vercel.app/",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/clipsAngularProject",
       },
     ],
   },
