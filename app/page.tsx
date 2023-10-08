@@ -525,7 +525,7 @@ type ImageProps = {
 };
 const ProjectImage = ({ title, imageSrc, imageLink, isLazy }: ImageProps) => {
   return (
-    <div className="sm:w-[300px] sm:min-w-[300px] h-full flex flex-col justify-items-center align-center">
+    <div className="sm:w-[400px] sm:min-w-[400px] h-full flex flex-col justify-items-center align-center">
       <h1 className="mx-auto font-bold">{title}</h1>
       <div className="relative mx-auto">
         <Link href={imageLink}>
@@ -542,14 +542,15 @@ const ProjectImage = ({ title, imageSrc, imageLink, isLazy }: ImageProps) => {
                 style={{ width: "100%", height: "100%" }}
                 alt={`Project:${title}`}
                 loading="lazy"
+                placeholder="blur"
               />
             </div>
           ) : (
             <div
               style={{
-                maxWidth: "300px",
+                maxWidth: "400px",
                 width: "100%",
-                aspectRatio: "1.61",
+                aspectRatio: "2",
               }}
             >
               <Image
@@ -557,6 +558,7 @@ const ProjectImage = ({ title, imageSrc, imageLink, isLazy }: ImageProps) => {
                 style={{ width: "100%", height: "100%" }}
                 alt={`Project:${title}`}
                 loading="eager"
+                placeholder="blur"
               />
             </div>
           )}
