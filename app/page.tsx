@@ -7,22 +7,23 @@ import { Inter } from "next/font/google";
 
 import { useState } from "react";
 
-import ecommercePhoto from "./ecommerceCMS.jpg";
-import frontendEcommercePhoto from "./ecommerceFrontend.jpg";
-import tfliteAndroid from "./TfliteAndroidApp.jpg";
-import d3Photo from "./d3scatter.jpg";
-import nasaPhoto from "./nasa.jpg";
-import rnSearchBar from "./searchbar.jpg";
-import nextZaya from "./ZayaNextJs.jpg";
-import drawingPic from "./drawing.jpg";
-import ionicPic from "./ion_app.jpg";
-import assessmentPic from "./assessment.jpg";
-import mandarinPic from "./hskpic.jpg";
-import crwnClothingPic from "./crwn.jpg";
-import reactGamePic from "./game.jpg";
-import robofriendsPic from "./robots.jpg";
-import apexAirElectric from "./apexairelectric.png";
-import angularClips from "./angularClips.jpg";
+import ecommercePhoto from "./ecommerceCMS.webp";
+import frontendEcommercePhoto from "./ecommerceFrontend.webp";
+import tfliteAndroid from "./TfliteAndroidApp.webp";
+import d3Photo from "./d3scatter.webp";
+import nasaPhoto from "./nasa.webp";
+import rnSearchBar from "./searchbar.webp";
+import nextZaya from "./ZayaNextJs.webp";
+import drawingPic from "./drawing.webp";
+import ionicPic from "./ion_app.webp";
+import assessmentPic from "./assessment.webp";
+import mandarinPic from "./hskpic.webp";
+import crwnClothingPic from "./crwn.webp";
+import reactGamePic from "./game.webp";
+import robofriendsPic from "./robots.webp";
+import apexAirElectric from "./apexairelectric.webp";
+import angularClips from "./angularClips.webp";
+import nextMusic from "./nextMusic.webp";
 
 import {
   AiFillFile,
@@ -174,6 +175,38 @@ const projects: Project[] = [
       },
     ],
   },
+
+  {
+    title: "Next Music",
+    id: 29,
+    description: `
+    A Next.js app that uses howler.js to play mp3 files and displays pdf files of the sheet music using react-pdf. Redux is used to control the state and tailwind is used for most of the styling.
+
+    `,
+    imageSrc: nextMusic,
+    imageLink: "https://next-music-zeta.vercel.app/",
+    isLazy: false,
+    tags: [
+      "Next.js",
+      "React",
+      "Typescript",
+      "TailwindCSS",
+      "howler.js",
+      "Redux",
+      "react-pdf",
+    ],
+    links: [
+      {
+        title: "website",
+        url: "https://next-music-zeta.vercel.app/",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/nextMusic",
+      },
+    ],
+  },
+
   {
     title: "Tflite Obj.Detection",
     id: 3,
@@ -497,29 +530,35 @@ const ProjectImage = ({ title, imageSrc, imageLink, isLazy }: ImageProps) => {
       <div className="relative mx-auto">
         <Link href={imageLink}>
           {isLazy ? (
-            <Image
-              src={imageSrc}
-              alt="ecommerce-website"
-              layout="cover"
-              loading="lazy"
+            <div
               style={{
-                width: "100%",
                 maxWidth: "300px",
+                width: "100%",
                 aspectRatio: "1.61",
               }}
-            />
+            >
+              <Image
+                src={imageSrc}
+                style={{ width: "100%", height: "100%" }}
+                alt={`Project:${title}`}
+                loading="lazy"
+              />
+            </div>
           ) : (
-            <Image
-              src={imageSrc}
-              alt="ecommerce-website"
-              layout="cover"
-              loading="eager"
+            <div
               style={{
-                width: "100%",
                 maxWidth: "300px",
+                width: "100%",
                 aspectRatio: "1.61",
               }}
-            />
+            >
+              <Image
+                src={imageSrc}
+                style={{ width: "100%", height: "100%" }}
+                alt={`Project:${title}`}
+                loading="eager"
+              />
+            </div>
           )}
         </Link>
       </div>
