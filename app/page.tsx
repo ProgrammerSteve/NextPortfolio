@@ -24,6 +24,7 @@ import robofriendsPic from "./robots.webp";
 import apexAirElectric from "./apexairelectric.webp";
 import angularClips from "./angularClips.webp";
 import nextMusic from "./nextMusic.webp";
+import warpConvert from "./warpConvert.webp";
 
 import {
   AiFillFile,
@@ -185,7 +186,7 @@ const projects: Project[] = [
     `,
     imageSrc: nextMusic,
     imageLink: "https://next-music-zeta.vercel.app/",
-    isLazy: false,
+    isLazy: true,
     tags: [
       "Next.js",
       "React",
@@ -208,6 +209,33 @@ const projects: Project[] = [
   },
 
   {
+    title: "Warp Convert",
+    id: 11272023,
+    description: `
+    A Next.js app that uses serverless functions to process images to resize and change file format. 
+    The MantineUI library is used to make components paired with Tailwind CSS. Code was written in Typescript and deployed on Vercel.
+
+    `,
+    imageSrc: warpConvert,
+    imageLink: "https://www.warpconvert.com/",
+    isLazy: true,
+    tags: [
+      "Next.js",
+      "React",
+      "Typescript",
+      "TailwindCSS",
+      "MantineUI",
+      "sharp",
+    ],
+    links: [
+      {
+        title: "website",
+        url: "https://www.warpconvert.com/",
+      },
+    ],
+  },
+
+  {
     title: "Tflite Obj.Detection",
     id: 3,
     description: `
@@ -217,7 +245,7 @@ const projects: Project[] = [
     `,
     imageSrc: tfliteAndroid,
     imageLink: "https://github.com/ProgrammerSteve/androidPractice3",
-    isLazy: false,
+    isLazy: true,
     tags: ["Kotlin", "Tensorflow", "Tensorflowlite", "Android"],
     links: [
       {
@@ -236,7 +264,7 @@ const projects: Project[] = [
     `,
     imageSrc: d3Photo,
     imageLink: "https://d3regressionplot.vercel.app/",
-    isLazy: false,
+    isLazy: true,
     tags: ["React", "Next.js", "d3", "Redux"],
     links: [
       {
@@ -259,7 +287,7 @@ const projects: Project[] = [
     `,
     imageSrc: nasaPhoto,
     imageLink: "http://44.202.0.218:8000/",
-    isLazy: false,
+    isLazy: true,
     tags: [
       "React",
       "React-router",
@@ -532,9 +560,9 @@ const ProjectImage = ({ title, imageSrc, imageLink, isLazy }: ImageProps) => {
           {isLazy ? (
             <div
               style={{
-                maxWidth: "300px",
+                maxWidth: "400px",
                 width: "100%",
-                aspectRatio: "1.61",
+                aspectRatio: "2",
               }}
             >
               <Image
