@@ -25,6 +25,7 @@ import apexAirElectric from "./apexairelectric.webp";
 import angularClips from "./angularClips.webp";
 import nextMusic from "./nextMusic.webp";
 import warpConvert from "./warpConvert.webp";
+import threejsDemo from "./threejsDemo.webp";
 
 import {
   AiFillFile,
@@ -207,6 +208,72 @@ const projects: Project[] = [
       },
     ],
   },
+
+
+
+
+
+
+  {
+    title: "Three.js Demo",
+    id: 1262023,
+    description: `
+    A Vite React app that uses Three.js, react-three/drei, react-three/fiber, and gsap to create a 3D
+     Environment with multiple lights, an orbital camera, and motion using gsap. A model (car) was imported 
+     and converted into .glb file and placed into the scene. App was deployed with netlify.
+    `,
+    imageSrc: threejsDemo,
+    imageLink: "https://keen-mandazi-1c760d.netlify.app/",
+    isLazy: true,
+    tags: [
+      "React",
+      "Three.js",
+      "three/drei",
+      "three/fiber",
+      "gsap"
+    ],
+    links: [
+      {
+        title: "website",
+        url: "https://keen-mandazi-1c760d.netlify.app/",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/three-tutorial",
+      },
+    ],
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   {
     title: "Warp Convert",
