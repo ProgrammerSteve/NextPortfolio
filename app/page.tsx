@@ -620,10 +620,10 @@ type ImageProps = {
 };
 const ProjectImage = ({ title, imageSrc, imageLink, isLazy }: ImageProps) => {
   return (
-    <div className="sm:w-[400px] sm:min-w-[400px] h-full flex flex-col justify-items-center align-center">
+    <div className="sm:w-[300px] sm:min-w-[300px] h-full flex flex-col justify-items-center align-center">
       <h1 className="mx-auto font-bold">{title}</h1>
       <div className="relative mx-auto">
-        <Link href={imageLink}>
+        <Link href={imageLink} target="_blank">
           {isLazy ? (
             <div
               style={{
@@ -693,10 +693,9 @@ const ProjectTagsAndLinks = ({ tags, links, keyId }: TagsProps) => {
           </span>
         ))}
       </div>
-
-      <p className="text-xs sm:text-sm font-semibold">Links</p>
+      <span className="text-xs sm:text-sm font-semibold">Links: </span>
       {links.map((link, ind) => (
-        <Link href={link.url} key={`link-${keyId}-${ind}`}>
+        <Link href={link.url} key={`link-${keyId}-${ind}`} target="_blank">
           <span className="bg-gray-800 text-white rounded-full px-2 text-xs justify-center align-middle mb-1">
             {link.title}
           </span>
@@ -711,7 +710,7 @@ type ProjectProps = {
 };
 const ProjectCard = ({ project }: ProjectProps) => {
   return (
-    <div className=" sm:h-[300px] flex flex-col sm:flex-row">
+    <div className=" sm:h-[300px] flex flex-col sm:flex-row gap-2">
       <ProjectImage
         title={project.title}
         imageSrc={project.imageSrc}
@@ -827,7 +826,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex flex-col md:flex-row h-screen relative">
+      <main className="flex flex-col md:flex-row h-screen relative min-w-0">
         {isNavOpen && (
           <div className="fixed bg-[#2f2c2d] z-50 right-0 h-screen w-[200px] min-w-[200px] text-white flex md:hidden flex-col justify-around pl-4">
             <div
@@ -856,7 +855,8 @@ export default function Home() {
         <div className="bg-[#211d1f] w-[200px] min-w-[200px] h-full  hidden md:flex text-white flex-col justify-around pl-4">
           <SideBar />
         </div>
-        <div className=" bg-[#ded4d4f] grow h-full px-2 lg:px-16 overflow-y-scroll">
+        <div className=" bg-[#ded4d4f]  grow min-w-0 h-full px-2 lg:px-8 overflow-y-scroll">
+          {/* <div><input  className="w-full rounded-lg px-2" type="text" placeholder="Search By Name or Tag"/></div> */}
           {projects.map((project, ind) => (
             <ProjectCard project={project} key={project.id} />
           ))}
