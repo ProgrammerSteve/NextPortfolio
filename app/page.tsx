@@ -504,7 +504,7 @@ const projects: Project[] = [
     title: "Mandarin HSK1 Training",
     id: 11,
     description: `
-    A react app that uses a random number to continously display flash cards for HSK level 1 
+    A react typescript app that uses a random number to continously display flash cards for HSK level 1 
     vocabulary. Context is used to share information between components. 
     The backend is an express app that accesses a MongoDB server to retrieve the
      chinese character list. Tailwind CSS is used to style the components
@@ -512,7 +512,7 @@ const projects: Project[] = [
     imageSrc: mandarinPic,
     imageLink: "https://singular-daffodil-96c4a5.netlify.app/",
     isLazy: true,
-    tags: ["React", "TailwindCSS", "MongoDB"],
+    tags: ["React","Typescript", "TailwindCSS", "MongoDB"],
     links: [
       {
         title: "website",
