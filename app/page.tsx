@@ -26,6 +26,7 @@ import angularClips from "./angularClips.webp";
 import nextMusic from "./nextMusic.webp";
 import warpConvert from "./warpConvert.webp";
 import threejsDemo from "./threejsDemo.webp";
+import webGLDemo from "./webgldemo.webp";
 
 import {
   AiFillFile,
@@ -208,6 +209,48 @@ const projects: Project[] = [
       },
     ],
   },
+
+
+
+
+  {
+    title: "WebGL Demos",
+    id: 252024,
+    description: `
+    A React/Typescript application deployed on gh-pages that exhibits the usages of WebGL graphics api along with the gl-matrix library. 
+    Tailwind CSS is used for the navigation sidebar. I'm slowly adding on to the project as I make more demos.
+
+    `,
+    imageSrc: webGLDemo,
+    imageLink: "https://programmersteve.github.io/webGLtest/",
+    isLazy: true,
+    tags: [
+      "WebGL",
+      "React",
+      "Typescript",
+      "TailwindCSS",
+    ],
+    links: [
+      {
+        title: "website",
+        url: "https://programmersteve.github.io/webGLtest/",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/webGLtest",
+      },
+    ],
+  },
+
+
+
+
+
+
+
+
+
+
 
 
 
