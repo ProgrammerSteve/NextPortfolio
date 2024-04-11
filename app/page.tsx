@@ -60,12 +60,12 @@ const projects: Project[] = [
     id: 0,
     description: `
     A React App that uses apollo-client, apollo-server, 
-    graphql, prisma, and planetscale to store and edit items on file. 
+    graphql, prisma, and CockroachDB (MySQL) to store and edit items on file. 
     Backend is written with express.js and done so in typescript. Front end uses React, 
     TailwindCSS, webpack and React-router-dom to display pages. Deployed as a docker image on Fly.io
     `,
     imageSrc: ecommercePhoto,
-    imageLink: "https://misty-night-9009.fly.dev/",
+    imageLink: "https://graphqlecommerce.fly.dev/",
     isLazy: false,
     tags: [
       "React",
@@ -73,7 +73,7 @@ const projects: Project[] = [
       "Next-auth",
       "Apollo-GraphQL",
       "Prisma",
-      "Planetscale",
+      "CockroachDB",
       "Express.js",
       "Node.js",
       "Typescript",
@@ -85,7 +85,7 @@ const projects: Project[] = [
     links: [
       {
         title: "website",
-        url: "https://misty-night-9009.fly.dev/",
+        url: "https://graphqlecommerce.fly.dev/",
       },
       {
         title: "github",
@@ -98,7 +98,7 @@ const projects: Project[] = [
     id: 1,
     description: `
     A Nextjs Typescript App that uses apollo-client, apollo-server, 
-    graphql, prisma, and planetscale to display items that can be added to the user's account. 
+    graphql, prisma, and CockroachDB (MySQL) to display items that can be added to the user's account. 
     Google OAuth is used with next Auth to sign in users and then creates an account on the backend.
     TailwindCSS, webpack and React-router-dom to display pages. Deployed to vercel.
     `,
@@ -112,7 +112,7 @@ const projects: Project[] = [
       "Google OAuth",
       "Apollo-GraphQL",
       "Prisma",
-      "Planetscale",
+      "CockroachDB",
       "Typescript",
       "TailwindCSS",
     ],
