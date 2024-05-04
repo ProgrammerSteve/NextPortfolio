@@ -27,6 +27,7 @@ import nextMusic from "./nextMusic.webp";
 import warpConvert from "./warpConvert.webp";
 import threejsDemo from "./threejsDemo.webp";
 import webGLDemo from "./webgldemo.webp";
+import MLPic from "./MLPic.webp"
 
 import {
   AiFillFile,
@@ -178,6 +179,49 @@ const projects: Project[] = [
       },
     ],
   },
+
+
+
+  {
+    title: "Udemy Machine Learning (AI) Course",
+    id: 20,
+    description: `
+    Developed three distinct models covering classification and regression.
+    Processed data for training and utilized techniques such as hyperparameter tuning for model optimization. 
+    Used a Logistic Regression model for heart disease prediction and implemented a time series regression model using RandomForestRegressor to forecast bulldozer prices. 
+    Leveraged transfer learning with MobileNetV2 and TensorFlow to construct a classification model on google colab. 
+    `,
+    imageSrc: MLPic,
+    imageLink: "https://github.com/ProgrammerSteve/heart_disease_ml",
+    isLazy: true,
+    tags: [
+      "python",
+      "numPy",
+      "pandas",
+      "matplotlib",
+      "scikit-learn",
+      "Tensorflow",
+      "AI",
+      "jupyter"
+    ],
+    links: [
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/Price_regression_ml",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/heart_disease_ml",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/DogClassificationTensorflow",
+      },
+    ],
+  },
+
+
+
 
   {
     title: "Next Music",
