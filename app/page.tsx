@@ -184,7 +184,7 @@ const projects: Project[] = [
 
   {
     title: "Udemy Machine Learning (AI) Course",
-    id: 20,
+    id: 542024,
     description: `
     Developed three distinct models covering classification and regression.
     Processed data for training and utilized techniques such as hyperparameter tuning for model optimization. 
