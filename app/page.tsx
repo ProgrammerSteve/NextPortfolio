@@ -28,6 +28,7 @@ import warpConvert from "./warpConvert.webp";
 import threejsDemo from "./threejsDemo.webp";
 import webGLDemo from "./webgldemo.webp";
 import MLPic from "./MLPic.webp"
+import CubeAnimation from "./cubeAnimation.webp"
 
 import {
   AiFillFile,
@@ -285,22 +286,6 @@ const projects: Project[] = [
       },
     ],
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   {
     title: "Three.js Demo",
     id: 1262023,
@@ -332,6 +317,64 @@ const projects: Project[] = [
   },
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+    title: "Webworker Animation",
+    id: 5212024,
+    description: `
+    A React app that uses a webworker to run a webgl animation on a canvas. 
+    Random points spin around the origin as they go towards their final path along 8 lines via interpolation which forms a cube.
+    The moving background is done using Vantajs.
+    
+    `,
+    imageSrc: CubeAnimation,
+    imageLink: "https://deft-blini-bd2c70.netlify.app/",
+    isLazy: true,
+    tags: [
+      "webgl",
+      "React",
+      "webworker",
+    ],
+    links: [
+      {
+        title: "website",
+        url: "https://deft-blini-bd2c70.netlify.app/",
+      },
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/cube-animation",
+      },
+    ],
+  },
 
 
 
