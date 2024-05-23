@@ -840,7 +840,8 @@ type ProjectProps = {
 };
 const ProjectCard = ({ project }: ProjectProps) => {
   return (
-    <div className=" sm:h-[300px] flex flex-col sm:flex-row gap-2">
+    <>
+    <div className="mb-12 sm:mb-0 sm:h-[300px] flex flex-col sm:flex-row gap-2">
       <ProjectImage
         title={project.title}
         imageSrc={project.imageSrc}
@@ -860,7 +861,10 @@ const ProjectCard = ({ project }: ProjectProps) => {
           key={`tags-${project.id}`}
         />
       </div>
+      
     </div>
+    <hr className="block sm:hidden border-t-4 border-gray-300 mb-8" />
+    </>
   );
 };
 
