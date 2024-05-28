@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --hamburger-menu: #ffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,4 +29,50 @@ body {
 
 *{
   min-width: 0;
+}
+
+
+.div-container {
+  background-color: transparent;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top:17px;
+  right:22.5px;
+  cursor: pointer;
+}
+.top-bar {
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  transition: transform 0.3s ease-in-out;
+  background-color: var(--hamburger-menu);
+  top: 0px;
+}
+.mid-bar {
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  transition: transform 0.3s ease-in-out;
+  background-color: var(--hamburger-menu);
+  top: 13px;
+}
+.bottom-bar {
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  transition: transform 0.3s ease-in-out;
+  background-color: var(--hamburger-menu);
+  bottom: 0px;
+}
+.bar-open-top {
+  transform: translate(0px, 13px) rotate(45deg);
+  transform-origin:center;
+}
+.bar-open-bottom {
+  transform: translate(0px, -13px) rotate(-45deg);
+  transform-origin:center;
+}
+.bar-open-middle {
+  transform: scale(0);
 }

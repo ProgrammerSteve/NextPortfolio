@@ -2,7 +2,6 @@
 
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-
 import { Inter } from "next/font/google";
 
 import { useState } from "react";
@@ -37,6 +36,7 @@ import {
   AiOutlineMenu,
   AiOutlineClose,
 } from "react-icons/ai";
+import Hamburger from "./Hamburger";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -963,27 +963,24 @@ export default function Home() {
       <main className="flex flex-col md:flex-row h-screen relative min-w-0">
         {isNavOpen && (
           <div className="fixed bg-[#2f2c2d] z-50 right-0 h-screen w-[200px] min-w-[200px] text-white flex md:hidden flex-col justify-around pl-4">
-            <div
+            {/* <div
               className="fixed right-[20px] top-[18px] cursor-pointer"
               onClick={toggleNav}
             >
               <AiOutlineClose size={30} />
-            </div>
+              
+            </div> */}
+            
             <SideBar />
           </div>
         )}
 
-        <div className="bg-[#211d1f] h-[75px] flex md:hidden  align-middle">
-          <div className="flex-1 "></div>
-          <div className="flex-1  text-xs sm:text-base grid place-items-center text-center text-white">
-            Steven Bautista, Fullstack Developer
+        <div className="bg-[#211d1f] h-[75px] flex md:hidden items-center">
+          <div className="flex-1 h-[45px]  text-xs sm:text-base grid place-items-center text-center text-white">
+            <p className="text-sm">Steven Bautista,</p>
+            <p className="text-sm">Fullstack Developer</p>
           </div>
-          <div
-            className="flex-1  h-full grid justify-end items-center cursor-pointer"
-            onClick={toggleNav}
-          >
-            <AiOutlineMenu className="mr-8" fill="white" size={25} />
-          </div>
+           <Hamburger isOpen={isNavOpen} toggleMenu={toggleNav}/>
         </div>
 
         <div className="bg-[#211d1f] w-[200px] min-w-[200px] h-full  hidden md:flex text-white flex-col justify-around pl-4">
