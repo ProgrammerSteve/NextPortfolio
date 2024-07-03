@@ -11,6 +11,7 @@ import frontendEcommercePhoto from "./ecommerceFrontend.webp";
 import tfliteAndroid from "./TfliteAndroidApp.webp";
 import d3Photo from "./d3scatter.webp";
 import nasaPhoto from "./nasa.webp";
+import pokedexPhoto from "./pokedex.webp";
 import rnSearchBar from "./searchbar.webp";
 import nextZaya from "./ZayaNextJs.webp";
 import drawingPic from "./drawing.webp";
@@ -217,6 +218,31 @@ const projects: Project[] = [
       {
         title: "github",
         url: "https://github.com/ProgrammerSteve/DogClassificationTensorflow",
+      },
+    ],
+  },
+  {
+    title: "Pokedex Android App",
+    id: 7032024,
+    description: `
+    An android app written in java that utilizes the pokemon api to get information and display it in a recycler view. 
+    Retrofit is used to make the api calls, glide is used to attach images to the image view, 
+    lombok is used to prevent boilerplate code.
+    `,
+    imageSrc: pokedexPhoto,
+    imageLink: "https://github.com/ProgrammerSteve/androidPokedex",
+    isLazy: true,
+    tags: [
+      "java",
+      "android",
+      "retrofit",
+      "glide",
+      "lombok",
+    ],
+    links: [
+      {
+        title: "github",
+        url: "https://github.com/ProgrammerSteve/androidPokedex",
       },
     ],
   },
