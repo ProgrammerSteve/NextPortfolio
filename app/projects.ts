@@ -22,6 +22,7 @@ import webGLDemo from "./photos/webgldemo.webp";
 import MLPic from "./photos/MLPic.webp"
 import CubeAnimation from "./photos/cubeAnimation.webp"
 import ElectronScraping from "./photos/electronScraping.webp"
+import BankCli from './photos/bankCli.webp'
 // import { ecommercePhoto } from "./photos";
 import type { Project } from "./page";
 
@@ -273,6 +274,44 @@ export const projects: Project[] = [
         },
       ],
     },
+
+
+
+
+    {
+      title: "Java Bank Cli",
+      id: 7152024,
+      description: `
+     A bank CLI app made with java that interacts with a postgresql database. 
+     Has the following features login, register, withdraw, deposit, viewBalance. 
+     Passwords are hashed and stored within the database.
+  
+      `,
+      imageSrc: BankCli,
+      imageLink: "https://github.com/ProgrammerSteve/JavaBankCli",
+      isLazy: true,
+      tags: [
+        "java",
+        "postgresql",
+      ],
+      links: [
+        {
+          title: "github",
+          url: "https://github.com/ProgrammerSteve/JavaBankCli",
+        },
+      ],
+    },
+
+
+
+
+
+
+
+
+
+
+
     {
       title: "WebGL Demos",
       id: 252024,
