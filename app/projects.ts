@@ -22,6 +22,7 @@ import webGLDemo from "./photos/webgldemo.webp";
 import MLPic from "./photos/MLPic.webp"
 import CubeAnimation from "./photos/cubeAnimation.webp"
 import ElectronScraping from "./photos/electronScraping.webp"
+import AndroidFirebase from "./photos/androidFirebase.webp"
 import BankCli from './photos/bankCli.webp'
 // import { ecommercePhoto } from "./photos";
 import type { Project } from "./page";
@@ -274,6 +275,32 @@ export const projects: Project[] = [
         },
       ],
     },
+
+
+    {
+      title: "Android Firebase App",
+      id: 7162024,
+      description: `
+     An Android app made with java that lets users sign in or register with Firebase Auth. 
+     When authenticated, the user can edit details connected to a Firestore Database for their profile. 
+      `,
+      imageSrc: AndroidFirebase,
+      imageLink: "https://github.com/ProgrammerSteve/AndroidFirebaseAuth",
+      isLazy: true,
+      tags: [
+        "java",
+        "android",
+        "firebase",
+        "firestore"
+      ],
+      links: [
+        {
+          title: "github",
+          url: "https://github.com/ProgrammerSteve/AndroidFirebaseAuth",
+        },
+      ],
+    },
+
 
 
 
