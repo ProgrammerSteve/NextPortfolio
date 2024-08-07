@@ -24,6 +24,7 @@ import CubeAnimation from "./photos/cubeAnimation.webp"
 import ElectronScraping from "./photos/electronScraping.webp"
 import AndroidFirebase from "./photos/androidFirebase.webp"
 import BankCli from './photos/bankCli.webp'
+import JavalinApp from "./photos/javalinApp.webp"
 // import { ecommercePhoto } from "./photos";
 import type { Project } from "./page";
 
@@ -291,6 +292,7 @@ export const projects: Project[] = [
         "java",
         "android",
         "firebase",
+        
         "firestore"
       ],
       links: [
@@ -302,6 +304,33 @@ export const projects: Project[] = [
     },
 
 
+
+    {
+      title: "Javalin-Java Bank Backend",
+      id: 862024,
+      description: `
+     A bank backend app made with the javalin framework in Java that interacts with a postgresql database. 
+     Uses Docker-Compose and Docker to run the application and the PostgreSQL database. 
+     Uses JWT tokens and hashing for authentication and storing passwords. Users and accounts have a one-to-many relationship.
+  
+      `,
+      imageSrc: JavalinApp,
+      imageLink: "https://github.com/ProgrammerSteve/Java-Javalin-Bank-Backend",
+      isLazy: true,
+      tags: [
+        "java",
+        "postgresql",
+        "javalin",
+        "docker",
+        "docker-compose"
+      ],
+      links: [
+        {
+          title: "github",
+          url: "https://github.com/ProgrammerSteve/Java-Javalin-Bank-Backend",
+        },
+      ],
+    },    
 
 
 
