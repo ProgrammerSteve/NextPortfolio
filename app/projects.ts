@@ -25,6 +25,7 @@ import ElectronScraping from "./photos/electronScraping.webp"
 import AndroidFirebase from "./photos/androidFirebase.webp"
 import BankCli from './photos/bankCli.webp'
 import JavalinApp from "./photos/javalinApp.webp"
+import RNClock from "./photos/RNClock.webp"
 // import { ecommercePhoto } from "./photos";
 import type { Project } from "./page";
 
@@ -396,6 +397,46 @@ export const projects: Project[] = [
         },
       ],
     },
+
+
+
+
+
+
+
+
+    // {
+    //   title: "React Native Clock",
+    //   id: 8252024,
+    //   description: `
+    //   A Typescript, React Native, expo app that uses react native Skia and reanimated library to create a canvas component with movement. 
+    //   Clock hands are rotated after every second in order to display the current time.
+  
+    //   `,
+    //   imageSrc: RNClock,
+    //   imageLink: "https://github.com/ProgrammerSteve/rnClock",
+    //   isLazy: true,
+    //   tags: [
+    //     "React",
+    //     "Typescript",
+    //     "React Native",
+    //     "expo",
+    //     "rn-Skia",
+    //     "rn-reanimated",
+    //     "TailwindCSS",
+    //   ],
+    //   links: [
+    //     {
+    //       title: "github",
+    //       url: "https://github.com/ProgrammerSteve/rnClock",
+    //     },
+    //   ],
+    // },
+
+
+
+
+
     {
       title: "Three.js Demo",
       id: 1262023,
