@@ -405,33 +405,33 @@ export const projects: Project[] = [
 
 
 
-    // {
-    //   title: "React Native Clock",
-    //   id: 8252024,
-    //   description: `
-    //   A Typescript, React Native, expo app that uses react native Skia and reanimated library to create a canvas component with movement. 
-    //   Clock hands are rotated after every second in order to display the current time.
+    {
+      title: "React Native Clock",
+      id: 8252024,
+      description: `
+      A Typescript, React Native, expo app that uses react native Skia and reanimated library to create a canvas component with movement. 
+      Clock hands are rotated after every second in order to display the current time.
   
-    //   `,
-    //   imageSrc: RNClock,
-    //   imageLink: "https://github.com/ProgrammerSteve/rnClock",
-    //   isLazy: true,
-    //   tags: [
-    //     "React",
-    //     "Typescript",
-    //     "React Native",
-    //     "expo",
-    //     "rn-Skia",
-    //     "rn-reanimated",
-    //     "TailwindCSS",
-    //   ],
-    //   links: [
-    //     {
-    //       title: "github",
-    //       url: "https://github.com/ProgrammerSteve/rnClock",
-    //     },
-    //   ],
-    // },
+      `,
+      imageSrc: RNClock,
+      imageLink: "https://github.com/ProgrammerSteve/rnClock",
+      isLazy: true,
+      tags: [
+        "React",
+        "Typescript",
+        "React Native",
+        "expo",
+        "rn-Skia",
+        "rn-reanimated",
+        "TailwindCSS",
+      ],
+      links: [
+        {
+          title: "github",
+          url: "https://github.com/ProgrammerSteve/rnClock",
+        },
+      ],
+    },
 
 
 
