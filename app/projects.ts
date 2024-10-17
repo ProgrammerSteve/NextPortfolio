@@ -26,6 +26,7 @@ import AndroidFirebase from "./photos/androidFirebase.webp"
 import BankCli from './photos/bankCli.webp'
 import JavalinApp from "./photos/javalinApp.webp"
 import RNClock from "./photos/RNClock.webp"
+import KafkaDemo from "./photos/KafkaDemo.webp"
 // import { ecommercePhoto } from "./photos";
 import type { Project } from "./page";
 
@@ -102,6 +103,57 @@ export const projects: Project[] = [
         },
       ],
     },
+    {
+      title: "Kafka Demo",
+      id: 10162024,
+      description: `
+      A React, Typescript app that uses socket.io to communicate with a Node.js, kafka consumer backend. 
+      The Textual python app sends info via a post request to a go gin kafka producer backend. 
+      The docker compose sets up the kafka.   
+      `,
+      imageSrc: KafkaDemo,
+      imageLink: "https://github.com/ProgrammerSteve/kafkaDemo",
+      isLazy: false,
+      tags: [
+        "React",
+        "Node.js",
+        "Python",
+        "Textual",
+        "Go",
+        "gin",
+        "Kafka",
+        "docker-compose",
+        "socket.io",
+        "Typescript",
+        "TailwindCSS",
+  
+      ],
+      links: [
+        {
+          title: "github",
+          url: "https://github.com/ProgrammerSteve/kafkaDemo",
+        },
+      ],
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     {
       title: "Apex Air Electric",
       id: 2,
