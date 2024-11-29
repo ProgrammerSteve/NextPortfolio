@@ -27,6 +27,8 @@ import BankCli from './photos/bankCli.webp'
 import JavalinApp from "./photos/javalinApp.webp"
 import RNClock from "./photos/RNClock.webp"
 import KafkaDemo from "./photos/KafkaDemo.webp"
+import ClickableThree from "./photos/ClickableThreeDemo.webp"
+
 // import { ecommercePhoto } from "./photos";
 import type { Project } from "./page";
 
@@ -481,6 +483,35 @@ export const projects: Project[] = [
         {
           title: "github",
           url: "https://github.com/ProgrammerSteve/rnClock",
+        },
+      ],
+    },
+
+    {
+      title: "Clickable Three Demo",
+      id: 11292024,
+      description: `
+      A Typescript, React demo using Three.js, Drei, Fiber, and Gsap. 
+      Has sphere objects that change colors and translate vertically when clicked.
+      `,
+      imageSrc: ClickableThree,
+      imageLink: "https://three-clickable.vercel.app/",
+      isLazy: true,
+      tags: [
+        "React",
+        "Three.js",
+        "three/drei",
+        "three/fiber",
+        "gsap"
+      ],
+      links: [
+        {
+          title: "website",
+          url: "https://three-clickable.vercel.app/",
+        },
+        {
+          title: "github",
+          url: "https://github.com/ProgrammerSteve/three-clickable",
         },
       ],
     },
