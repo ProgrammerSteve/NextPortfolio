@@ -165,13 +165,13 @@ export const projects: Project[] = [
   
       `,
       imageSrc: apexAirElectric,
-      imageLink: "https://apexairelectric.com/",
+      imageLink: "https://apex-air-electric.vercel.app/",
       isLazy: false,
       tags: ["Angular", "Typescript", "Rxjs", "TailwindCSS", "Angular-router"],
       links: [
         {
           title: "website",
-          url: "https://apexairelectric.com/",
+          url: "https://apex-air-electric.vercel.app/",
         },
       ],
     },
