@@ -28,6 +28,7 @@ import JavalinApp from "./photos/javalinApp.webp"
 import RNClock from "./photos/RNClock.webp"
 import KafkaDemo from "./photos/KafkaDemo.webp"
 import ClickableThree from "./photos/ClickableThreeDemo.webp"
+import Fibonacci from "./photos/fibonacci_calculator.webp"
 
 // import { ecommercePhoto } from "./photos";
 import type { Project } from "./page";
@@ -577,6 +578,53 @@ export const projects: Project[] = [
         },
       ],
     }, 
+
+
+
+
+
+
+
+
+    {
+      title: "Fibonacci Calculator",
+      id: 2092025,
+      description: `
+      A python flask app that serves a webpage and calculates the fibonacci value on another endpoint. Uses pytest on the backend to 
+      test if functions work. Uses playwright to test functionality of the frontend app.
+      
+      `,
+      imageSrc: Fibonacci,
+      imageLink: "https://github.com/ProgrammerSteve/fibonacci_python_app",
+      isLazy: true,
+      tags: [
+        "python",
+        "flaskpy",
+        "pytest",
+        "playwright",
+        "javascript",
+      ],
+      links: [
+        {
+          title: "github",
+          url: "https://github.com/ProgrammerSteve/fibonacci_python_app",
+        },
+      ],
+    }, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     {
       title: "Warp Convert",
       id: 11272023,
@@ -604,6 +652,13 @@ export const projects: Project[] = [
       ],
     },
   
+
+
+
+
+
+
+
     {
       title: "Tflite Obj.Detection",
       id: 3,
