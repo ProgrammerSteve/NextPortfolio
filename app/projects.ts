@@ -500,6 +500,7 @@ export const projects: Project[] = [
       isLazy: true,
       tags: [
         "React",
+        "Typescript",
         "Three.js",
         "three/drei",
         "three/fiber",
@@ -534,6 +535,7 @@ export const projects: Project[] = [
       isLazy: true,
       tags: [
         "React",
+        "Javascript",
         "Three.js",
         "three/drei",
         "three/fiber",
@@ -563,9 +565,9 @@ export const projects: Project[] = [
       imageLink: "https://deft-blini-bd2c70.netlify.app/",
       isLazy: true,
       tags: [
-        "webgl",
+        "Webgl",
         "React",
-        "webworker",
+        "Webworker",
       ],
       links: [
         {
@@ -598,11 +600,11 @@ export const projects: Project[] = [
       imageLink: "https://github.com/ProgrammerSteve/fibonacci_python_app",
       isLazy: true,
       tags: [
-        "python",
-        "flaskpy",
-        "pytest",
-        "playwright",
-        "javascript",
+        "Python",
+        "Flaskpy",
+        "Pytest",
+        "Playwright",
+        "Javascript",
       ],
       links: [
         {
@@ -689,7 +691,7 @@ export const projects: Project[] = [
       imageSrc: d3Photo,
       imageLink: "https://d3regressionplot.vercel.app/",
       isLazy: true,
-      tags: ["React", "Next.js", "d3", "Redux"],
+      tags: ["React", "Next.js","Javascript", "d3", "Redux"],
       links: [
         {
           title: "website",
@@ -714,6 +716,7 @@ export const projects: Project[] = [
       isLazy: true,
       tags: [
         "React",
+        "Javascript",
         "React-router",
         "MongoDB",
         "Docker",
@@ -743,7 +746,7 @@ export const projects: Project[] = [
       imageSrc: rnSearchBar,
       imageLink: "https://github.com/ProgrammerSteve/reactNativeSearchBar",
       isLazy: true,
-      tags: ["React native", "PostgreSQL", "Supabase"],
+      tags: ["React native","Javascript", "PostgreSQL", "Supabase"],
       links: [
         {
           title: "github",
@@ -782,7 +785,7 @@ export const projects: Project[] = [
       imageSrc: drawingPic,
       imageLink: "https://drawingapp-beryl.vercel.app/",
       isLazy: true,
-      tags: ["Next.js", "Canvas", "Redux"],
+      tags: ["Next.js","React","Javascript", "Canvas", "Redux"],
       links: [
         {
           title: "website",
@@ -845,7 +848,7 @@ export const projects: Project[] = [
       imageSrc: assessmentPic,
       imageLink: "https://programmersteve.github.io/assessment-1/",
       isLazy: true,
-      tags: ["React.js", "Redux", "Redux-toolkit", "serverless function"],
+      tags: ["React","Javascript", "Redux", "Redux-toolkit", "serverless function"],
       links: [
         {
           title: "website",
@@ -902,6 +905,7 @@ export const projects: Project[] = [
       tags: [
         "Firebase",
         "React",
+        "Javascript",
         "Stripe",
         "Redux-saga",
         "Redux",
@@ -923,14 +927,14 @@ export const projects: Project[] = [
       id: 13,
       description: `
       This app has 6 levels where your goal is to get the red circle to reach the yellow square while avoiding
-       the purple square. React motion library is used to move the div element, useContext shares state 
+       the purple square. Framer motion library is used to move the div element, useContext shares state 
       between the game and score cards, useEffect/useRef is used to keep track of the time per stage, 
       and the useEffect hook keeps track of any changes to the state in order to progress the game.
       `,
       imageSrc: reactGamePic,
       imageLink: "https://programmersteve.github.io/reactsquaregame/",
       isLazy: true,
-      tags: ["React"],
+      tags: ["React", "Javascript"],
       links: [
         {
           title: "website",
@@ -955,7 +959,7 @@ export const projects: Project[] = [
       imageSrc: robofriendsPic,
       imageLink: "https://programmersteve.github.io/robofriends-test/",
       isLazy: true,
-      tags: ["Jest", "Unit Testing", "React", "Redux-Thunk", "Redux"],
+      tags: ["Jest", "Unit Testing", "React","Javascript", "Redux-Thunk", "Redux"],
       links: [
         {
           title: "website",
