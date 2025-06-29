@@ -691,7 +691,7 @@ export const projects: Project[] = [
       imageSrc: d3Photo,
       imageLink: "https://d3regressionplot.vercel.app/",
       isLazy: true,
-      tags: ["React", "Next.js","Javascript", "d3", "Redux"],
+      tags: ["React", "Next.js","Typescript", "d3", "Redux"],
       links: [
         {
           title: "website",
