@@ -934,7 +934,7 @@ export const projects: Project[] = [
       imageSrc: reactGamePic,
       imageLink: "https://programmersteve.github.io/reactsquaregame/",
       isLazy: true,
-      tags: ["React", "Javascript"],
+      tags: ["React", "Typescript"],
       links: [
         {
           title: "website",
