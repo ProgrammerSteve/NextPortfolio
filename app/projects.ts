@@ -29,6 +29,7 @@ import RNClock from "./photos/RNClock.webp"
 import KafkaDemo from "./photos/KafkaDemo.webp"
 import ClickableThree from "./photos/ClickableThreeDemo.webp"
 import Fibonacci from "./photos/fibonacci_calculator.webp"
+import StockChart from "./photos/stockchart.webp"
 
 // import { ecommercePhoto } from "./photos";
 import type { Project } from "./page";
@@ -754,6 +755,44 @@ export const projects: Project[] = [
         },
       ],
     },
+
+
+
+
+
+
+
+    {
+      title: "Vue Stock Charts",
+      id: 9122025,
+      description: `
+      A Typescript/Vue app that uses multiple finance apis to display stock data via charts and articles. 
+      The app uses vite and is deployed on vercel.
+      `,
+      imageSrc: StockChart,
+      imageLink: "https://vue-stock-chart.vercel.app/",
+      isLazy: true,
+      tags: ["Next.js", "Typescript", "TailwindCSS"],
+      links: [
+        {
+          title: "github",
+          url: "https://github.com/ProgrammerSteve/vue-stock-chart",
+        },
+        {
+          title: "website",
+          url: "https://vue-stock-chart.vercel.app/",
+        },
+      ],
+    },
+
+
+
+    
+
+
+
+
+
     {
       title: "Nextjs Zayarenovations",
       id: 7,
