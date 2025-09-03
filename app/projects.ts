@@ -704,6 +704,43 @@ export const projects: Project[] = [
         },
       ],
     },
+
+
+
+
+
+   {
+      title: "Vue Stock Charts",
+      id: 9122025,
+      description: `
+      A Typescript/Vue app that uses multiple finance apis to display stock data via charts and articles.
+      The charts were made using the echarts library and Vue api composition functions were used to organize the code.
+      The app uses vite and is deployed on vercel.
+      `,
+      imageSrc: StockChart,
+      imageLink: "https://vue-stock-chart.vercel.app/",
+      isLazy: true,
+      tags: ["Vue", "Typescript", "echarts"],
+      links: [
+        {
+          title: "github",
+          url: "https://github.com/ProgrammerSteve/vue-stock-chart",
+        },
+        {
+          title: "website",
+          url: "https://vue-stock-chart.vercel.app/",
+        },
+      ],
+    },
+
+
+
+
+
+
+
+
+
     {
       title: "Nasa Project (Udemy)",
       id: 5,
@@ -736,6 +773,18 @@ export const projects: Project[] = [
         },
       ],
     },
+
+
+
+
+
+
+
+
+
+
+
+
     {
       title: "Smoothies Recipes React Native App",
       id: 6,
@@ -762,30 +811,7 @@ export const projects: Project[] = [
 
 
 
-    {
-      title: "Vue Stock Charts",
-      id: 9122025,
-      description: `
-      A Typescript/Vue app that uses multiple finance apis to display stock data via charts and articles. 
-      The app uses vite and is deployed on vercel.
-      `,
-      imageSrc: StockChart,
-      imageLink: "https://vue-stock-chart.vercel.app/",
-      isLazy: true,
-      tags: ["Next.js", "Typescript", "TailwindCSS"],
-      links: [
-        {
-          title: "github",
-          url: "https://github.com/ProgrammerSteve/vue-stock-chart",
-        },
-        {
-          title: "website",
-          url: "https://vue-stock-chart.vercel.app/",
-        },
-      ],
-    },
-
-
+ 
 
     
 
